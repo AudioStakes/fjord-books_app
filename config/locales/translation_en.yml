@@ -9,3 +9,23 @@ en:
         memo: Memo  #g
         picture: Picture  #g
         title: Title  #g
+  books:
+    index:
+      title: Books
+    edit:
+      title: Editing Book
+    new:
+      title: New Book
+    create:
+      success: Book was successfully created.
+    update:
+      success: Book was successfully updated.
+    destroy:
+      success: Book was successfully destroyed.
+  helpers:
+    menu:
+      show: Show
+      edit: Edit
+      destroy: Destroy
+      new: New
+      back: Back
