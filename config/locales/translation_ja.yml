@@ -22,6 +22,9 @@ ja:
       success: 本を更新しました。
     destroy:
       success: 本を削除しました。
+  shared:
+      switch_language:
+        title: 言語を選ぶ
   helpers:
     menu:
       show: 詳細
@@ -29,3 +32,6 @@ ja:
       destroy: 削除
       new: 登録
       back: 戻る
+    languages:
+      ja: 日本語
+      en: 英語

@@ -22,6 +22,9 @@ en:
       success: Book was successfully updated.
     destroy:
       success: Book was successfully destroyed.
+  shared:
+      switch_language:
+        title: Choose a language
   helpers:
     menu:
       show: Show
@@ -29,3 +32,6 @@ en:
       destroy: Destroy
       new: New
       back: Back
+    languages:
+      ja: Japanese
+      en: English

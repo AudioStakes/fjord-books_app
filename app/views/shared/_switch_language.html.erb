@@ -1,0 +1,8 @@
+<div>
+  <span>
+    <%= t('.title') %>:
+    <% I18n.available_locales.excluding(I18n.locale).each do |locale| %>
+      <%= link_to(t("helpers.languages.#{locale}"), locale: locale) %>
+    <% end %>
+  </span>
+</div>
