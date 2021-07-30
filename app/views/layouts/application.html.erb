@@ -10,6 +10,10 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
+      <%= render 'shared/navbar' %>
+    <% end %>
+
     <% if notice %>
       <p id="notice"><%= notice %></p>
     <% end %>

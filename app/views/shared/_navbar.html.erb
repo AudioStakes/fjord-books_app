@@ -1,0 +1,5 @@
+<nav>
+  <%= link_to_unless_current Book.model_name.human, books_path %> |
+  <%= link_to_unless_current User.model_name.human, users_path %> |
+  <%= link_to t('views.common.sign_out'), destroy_user_session_path, method: :delete %>
+</nav>
