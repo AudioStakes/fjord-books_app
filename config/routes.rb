@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_scope :user do
+    root to: 'devise/sessions#new'
+  end
   devise_for :users, controllers: { registrations: 'users/registrations' }
   resources :users, only: [:index, :show]
   resources :books
