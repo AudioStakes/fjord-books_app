@@ -1,0 +1,38 @@
+ja:
+  activerecord:
+    models:
+      book: 本  #g
+
+    attributes:
+      book:
+        author: 著者  #g
+        memo: メモ  #g
+        picture: 写真  #g
+        title: タイトル  #g
+  books:
+    index:
+      title: 本一覧
+    edit:
+      title: 本編集
+    new:
+      title: 本登録
+  controllers:
+    create:
+      success: "%{model_name}を登録しました。"
+    update:
+      success: "%{model_name}を更新しました。"
+    destroy:
+      success: "%{model_name}を削除しました。"
+  shared:
+      switch_language:
+        title: 言語を選ぶ
+  helpers:
+    menu:
+      show: 詳細
+      edit: 編集
+      destroy: 削除
+      new: 登録
+      back: 戻る
+    languages:
+      ja: 日本語
+      en: 英語

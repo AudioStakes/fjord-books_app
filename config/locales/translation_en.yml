@@ -1,0 +1,38 @@
+en:
+  activerecord:
+    models:
+      book: Book  #g
+
+    attributes:
+      book:
+        author: Author  #g
+        memo: Memo  #g
+        picture: Picture  #g
+        title: Title  #g
+  books:
+    index:
+      title: Books
+    edit:
+      title: Editing Book
+    new:
+      title: New Book
+  controllers:
+    create:
+      success: "%{model_name} was successfully created."
+    update:
+      success: "%{model_name} was successfully updated."
+    destroy:
+      success: "%{model_name} was successfully destroyed."
+  shared:
+      switch_language:
+        title: Choose a language
+  helpers:
+    menu:
+      show: Show
+      edit: Edit
+      destroy: Destroy
+      new: New
+      back: Back
+    languages:
+      ja: Japanese
+      en: English
