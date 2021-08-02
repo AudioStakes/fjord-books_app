@@ -16,12 +16,13 @@ ja:
       title: 本編集
     new:
       title: 本登録
+  controllers:
     create:
-      success: 本を登録しました。
+      success: "%{model_name}を登録しました。"
     update:
-      success: 本を更新しました。
+      success: "%{model_name}を更新しました。"
     destroy:
-      success: 本を削除しました。
+      success: "%{model_name}を削除しました。"
   shared:
       switch_language:
         title: 言語を選ぶ
