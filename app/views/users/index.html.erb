@@ -21,7 +21,7 @@
         <td><%= user.address %></td>
         <td>
           <% if user.icon.attached? %>
-            <%= image_tag(user.icon) %>
+            <%= image_tag(user.icon.variant(resize_to_limit: [50, 50])) %>
           <% end %>
         </td>
         <td><%= link_to t('views.common.show'), user %></td>
