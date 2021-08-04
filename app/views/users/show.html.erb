@@ -1,5 +1,11 @@
 <h1><%= t('views.common.title_show', name: User.model_name.human) %></h1>
 
+<% if current_user.followings.include?(@user) %>
+  <%= render 'unfollow', user: @user %>
+<% else %>
+  <%= render 'follow', user: @user %>
+<% end %>
+
 <p>
   <strong><%= User.human_attribute_name(:email) %>:</strong>
   <%= @user.email %>
