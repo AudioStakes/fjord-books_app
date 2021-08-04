@@ -20,7 +20,7 @@
 
 <div class="field">
   <%= f.label :icon %>
-  <%= f.file_field :icon %>
+  <%= f.file_field :icon, accept: 'image/png, image/gif, image/jpeg' %>
 
   <% if f.object.icon.attached? %>
     <div>
