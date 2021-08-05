@@ -1,0 +1,7 @@
+<h1><%= Follow.human_attribute_name(:following) %></h1>
+
+<h2><%= User.model_name.human %>: <%= @user.name %></h2>
+
+<%= render 'users', users: @followings %>
+
+<%= link_to t('views.common.back'), @user %>
