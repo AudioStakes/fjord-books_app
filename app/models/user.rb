@@ -17,6 +17,6 @@ class User < ApplicationRecord
   end
 
   def unfollow!(user)
-    active_follows.find_by(following: user).destroy!
+    active_follows.find_by!(following: user).destroy!
   end
 end
