@@ -17,8 +17,12 @@
         <td><%= report.user.name || report.user.email %></td>
         <td><%= l(report.created_at, format: :long) %></td>
         <td><%= link_to 'Show', report %></td>
-        <td><%= link_to 'Edit', edit_report_path(report) %></td>
-        <td><%= link_to 'Destroy', report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user == report.user %>
+          <td><%= link_to 'Edit', edit_report_path(report) %></td>
+          <td><%= link_to 'Destroy', report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% else %>
+          <td colspan="2"></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
