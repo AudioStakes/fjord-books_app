@@ -1,7 +1,12 @@
 <%= form_with(model: report) do |form| %>
   <% if report.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(report.errors.count, "error") %> prohibited this report from being saved:</h2>
+      <h2>
+        <%= t('errors.messages.not_saved',
+                  count: report.errors.count,
+                  resource: Report.model_name.human.downcase)
+        %>
+      </h2>
 
       <ul>
         <% report.errors.each do |error| %>
