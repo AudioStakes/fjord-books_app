@@ -6,6 +6,16 @@
 </p>
 
 <p>
+  <strong>User:</strong>
+  <%= @report.user.name || @report.user.email %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= l(@report.created_at, format: :long) %>
+</p>
+
+<p>
   <strong>Content:</strong>
   <%= @report.content %>
 </p>
