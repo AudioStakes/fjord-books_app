@@ -1,0 +1,15 @@
+<strong><%= Comment.model_name.human %>:</strong>
+<% if comments.present? %>
+  <ul>
+    <% comments.order(:id).includes(:user).each do |comment| %>
+      <li>
+        <p>
+          <%= comment.content %>
+          <br>
+          <%= Comment.human_attribute_name(:user) %>: <%= comment.user.name || comment.user.email %> |
+          <%= Comment.human_attribute_name(:created_at) %>: <%= l(comment.created_at, format: :long) %>
+        </p>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

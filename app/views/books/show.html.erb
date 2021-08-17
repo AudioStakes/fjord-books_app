@@ -20,5 +20,10 @@
   <%= image_tag(@book.picture_url) if @book.picture.present? %>
 </p>
 
+<div>
+  <%= render 'comments/index', comments: @book.comments %>
+  <%= render 'comments/form', comment: @comment || @book.comments.new %>
+</div>
+
 <%= link_to t('views.common.edit'), edit_book_path(@book) %> |
 <%= link_to t('views.common.back'), books_path %>

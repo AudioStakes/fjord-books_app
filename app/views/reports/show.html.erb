@@ -20,6 +20,11 @@
   <%= @report.content %>
 </p>
 
+<div>
+  <%= render 'comments/index', comments: @report.comments %>
+  <%= render 'comments/form', comment: @comment || @report.comments.new %>
+</div>
+
 <% if current_user == @report.user %>
   <%= link_to t('views.common.edit'), edit_report_path(@report) %> |
 <% end %>
