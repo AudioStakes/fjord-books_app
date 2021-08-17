@@ -1,20 +1,5 @@
 <%= form_with(model: report) do |form| %>
-  <% if report.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= t('errors.messages.not_saved',
-                  count: report.errors.count,
-                  resource: Report.model_name.human.downcase)
-        %>
-      </h2>
-
-      <ul>
-        <% report.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render 'shared/error_messages', resource: report %>
 
   <div class="field">
     <%= form.label :title %>
