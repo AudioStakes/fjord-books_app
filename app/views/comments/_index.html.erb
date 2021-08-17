@@ -17,4 +17,6 @@
       </li>
     <% end %>
   </ul>
+<% else %>
+  <%= t('views.common.no_record', name: Comment.model_name.human) %>
 <% end %>
