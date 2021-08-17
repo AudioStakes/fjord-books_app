@@ -12,6 +12,33 @@ class Books::CommentsController < ApplicationController
     end
   end
 
+  def edit
+    @book    = Book.find(params[:book_id])
+    @comment = @book.comments.find(params[:id])
+
+    render 'comments/edit'
+  end
+
+  def update
+    @book    = Book.find(params[:book_id])
+    @comment = @book.comments.find(params[:id])
+
+    if @comment.update(comment_params)
+      redirect_to @book, notice: t('controllers.common.notice_update', name: Comment.model_name.human)
+    else
+      render 'comments/edit', status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @book    = Book.find(params[:book_id])
+    @comment = @book.comments.find(params[:id])
+
+    @comment.destroy
+
+    redirect_to @book, notice: t('controllers.common.notice_destroy', name: Comment.model_name.human)
+  end
+
   private
 
   def comment_params

@@ -8,6 +8,11 @@
           <br>
           <%= Comment.human_attribute_name(:user) %>: <%= comment.user.name || comment.user.email %> |
           <%= Comment.human_attribute_name(:created_at) %>: <%= l(comment.created_at, format: :long) %>
+          <br>
+          <% if current_user == comment.user %>
+            <td><%= link_to t('views.common.edit'), [:edit, comment.commentable, comment] %></td> |
+            <td><%= link_to t('views.common.destroy'), [comment.commentable, comment], method: :delete, data: { confirm: t('views.common.delete_confirm') } %></td>
+          <% end %>
         </p>
       </li>
     <% end %>
