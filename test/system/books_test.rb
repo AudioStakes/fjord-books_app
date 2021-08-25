@@ -6,12 +6,7 @@ class BooksTest < ApplicationSystemTestCase
   setup do
     user = create(:user)
 
-    visit root_url
-
-    fill_in 'Eメール', with: user.email
-    fill_in 'パスワード', with: user.password
-
-    click_on 'ログイン'
+    sign_in_as(user)
   end
 
   test 'visiting the index' do
