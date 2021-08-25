@@ -5,5 +5,6 @@ FactoryBot.define do
     title { Faker::Book.title }
     memo { Faker::Book.genre }
     author { Faker::Book.author }
+    picture { Rails.root.join('test/fixtures/files/no-image.png').open }
   end
 end

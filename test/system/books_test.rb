@@ -18,6 +18,7 @@ class BooksTest < ApplicationSystemTestCase
     assert_text book.title
     assert_text book.memo
     assert_text book.author
+    assert_text book.picture
   end
 
   test 'creating a Book' do
@@ -30,6 +31,7 @@ class BooksTest < ApplicationSystemTestCase
     fill_in 'タイトル', with: book.title
     fill_in 'メモ', with: book.memo
     fill_in '著者', with: book.author
+    attach_file '画像', file_fixture('no-image.png')
 
     click_on '登録する'
 
@@ -37,6 +39,7 @@ class BooksTest < ApplicationSystemTestCase
     assert_text book.title
     assert_text book.memo
     assert_text book.author
+    assert_selector "img[src$='no-image.png']" # 表示されているファイルの中身がアップロードしたファイルと同じかどうか検証するのは手間がかかるため、ファイル名のみを検証することとした
   end
 
   test 'updating a Book' do
@@ -50,6 +53,7 @@ class BooksTest < ApplicationSystemTestCase
     fill_in 'タイトル', with: book.title
     fill_in 'メモ', with: book.memo
     fill_in '著者', with: book.author
+    attach_file '画像', file_fixture('no-image.png')
 
     click_on '更新する'
 
@@ -57,6 +61,7 @@ class BooksTest < ApplicationSystemTestCase
     assert_text book.title
     assert_text book.memo
     assert_text book.author
+    assert_selector "img[src$='no-image.png']"
   end
 
   test 'destroying a Book' do
@@ -72,5 +77,6 @@ class BooksTest < ApplicationSystemTestCase
     assert_no_text book.title
     assert_no_text book.memo
     assert_no_text book.author
+    assert_no_text book.picture
   end
 end
