@@ -14,7 +14,7 @@ class ReportsTest < ApplicationSystemTestCase
 
     visit reports_url
 
-    assert_selector 'h1', text: '日報'
+    assert_selector 'h1', text: '日報', exact_text: true
     assert_text report.title
     assert_text @current_user.name_or_email
     assert_text I18n.l(report.created_on)
