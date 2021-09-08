@@ -7,6 +7,9 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+      models:
+        follow:
+          must_not_follow_yourself: 自分自身をフォローできません
   date:
     abbr_day_names:
     - 日
@@ -224,6 +227,9 @@ ja:
       previous: '前'
       next: '次'
       truncate: '...'
+    follow:
+      follow: フォローする
+      unfollow: フォローを解除する
   controllers:
     common:
       notice_create: "%{name}が作成されました。"

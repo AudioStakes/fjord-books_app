@@ -3,6 +3,7 @@ ja:
     models:
       book: 本  #g
       user: ユーザ
+      follow: フォロー
 
     attributes:
       book:
@@ -16,3 +17,6 @@ ja:
         address: 住所
         self_introduction: 自己紹介文
         avatar: ユーザ画像
+      follow:
+        follower: フォロワー
+        following: フォロー中
