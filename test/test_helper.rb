@@ -12,4 +12,14 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  include FactoryBot::Syntax::Methods
+
+  def sign_in_as(user)
+    visit root_url
+
+    fill_in 'Eメール', with: user.email
+    fill_in 'パスワード', with: user.password
+
+    click_on 'ログイン'
+  end
 end
